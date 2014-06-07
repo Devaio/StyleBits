@@ -1,0 +1,13 @@
+include includes/header
+
+h1.text-center Human Design
+
+- if(typeof user !== 'undefined'){
+	h1 Hello, #{user.name}
+	a(href="/logout") Logout
+- } else{
+	h2
+		a(href="/login") Login / Signup
+- }
+
+include includes/footer

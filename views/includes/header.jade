@@ -1,0 +1,31 @@
+doctype 5
+html(lang="en")
+	head
+		title Human Design
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+		meta(name="description", content="")
+		meta(http-equiv="content-type", content="text/html;charset=UTF-8")
+		meta(property="og:image", content="")
+		meta(property="og:title", content="")
+		meta(property="og:description", content="")	
+
+		//Vendor CSS 
+		link(rel="stylesheet", href="/public/css/dist/vendor.min.css")
+
+		//Vendor JS
+		script(src="/public/js/dist/vendor.min.js")
+
+		- if(typeof ENV !== 'undefined') {
+			//CSS Build File
+			link(rel="stylesheet", href="/public/css/dist/build.min.css")
+			//JS Build File
+			script(src="/public/js/dist/build.min.js")
+		- } else {
+			link(rel="stylesheet", href="/public/css/lib/main.css")
+		- }
+
+		// Templates
+		script(src="/public/js/templates/templates.js")
+
+	body
+		block content

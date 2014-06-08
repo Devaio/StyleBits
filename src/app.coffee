@@ -19,10 +19,11 @@ if typeof(global.process.env.NODE_ENV) is 'undefined'
 # Connect to the DB
 mongoose = require 'mongoose'
 
-if global.process.env.NODE_ENV is 'production'
-	mongoose.connect(config.dbURI+'?slaveOk=true&connectTimeoutMS=10000')
-else
-	mongoose.connect(config.dbURI)
+# if global.process.env.NODE_ENV is 'production'
+# 	mongoose.connect(config.dbURI+'?slaveOk=true&connectTimeoutMS=10000')
+# else
+
+mongoose.connect(global.process.env.MONGOHQ_URI)
 
 # Models
 models = __dirname + '/models'
@@ -41,4 +42,5 @@ require('./config/routes')(app, passport)
 port = process.env.PORT or 3000
 server.listen port, () -> 
   console.log "Server running on port " + port
+
 

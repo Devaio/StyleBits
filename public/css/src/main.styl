@@ -7,9 +7,37 @@ body
 	font-family : "Calibri"//-, Helvetica
 	color:#000
 	font-weight:200
-	height 20000px
+	// height 20000px
 	// background:url('/public/img/hd-bg.png') 0 0 no-repeat
 
+footer
+	position fixed
+	width 100%
+	bottom 0px
+
+#splash-text-fader
+	transition(all, 2s, ease-out)
+	opacity 0
+
+	&.splash-fade
+		opacity 1
+		transform(translate(0px, -50px))
+
+
+
+/************************/
+/***** Logo Styles ******/
+/************************/
+
+.style-logo
+	font-size 55px
+	line-height 25px
+	margin-top 4px
+
+.bits-logo
+	font-size 96px
+	line-height 25px
+	
 /***********************/
 /***** Nav Styles ******/
 /***********************/
@@ -26,7 +54,8 @@ body
 
 
 
-
+#splash-text
+	height: 640px
 
 
 
@@ -36,8 +65,21 @@ body
 	#floating-nav
 		top -50px
 
+	#splash-text
+		height: 768px
 
+	/************************/
+	/***** Logo Styles ******/
+	/************************/
 
+	.style-logo
+		font-size 115px
+		line-height 50px
+		margin-top 8px
+
+	.bits-logo
+		font-size 200px
+		line-height 50px
 
 
 
@@ -45,3 +87,7 @@ body
 @media(min-width 992px)
 	#floating-nav
 		top -50px
+
+	#splash-text
+		height: 850px
+

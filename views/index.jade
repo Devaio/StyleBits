@@ -1,6 +1,14 @@
 include includes/header
 
-h1.text-center StyleBits
+.container.flex.margin-auto
+	
+	.col-xs-12.flex.margin-auto.text-center#splash-text
+		#splash-text-fader.col-xs-12.text-xl.flex.margin-auto
+			.row.flex.margin-auto
+				.col-xs-6.text-right.style-logo Style
+				.col-xs-6.text-left.text-digital.text-xl.bits-logo BITS
+
+
 
 //- - if(typeof user !== 'undefined'){
 //- 	h1 Hello, #{user.name}
@@ -10,47 +18,45 @@ h1.text-center StyleBits
 //- 		a(href="/login") Login / Signup
 //- - }
 
-#main-navbar.container-fluid
-	.row
-		.col-xs-12.col-md-6.col-md-offset-3
-			.row
-				.col-xs-6.col-md-2.col-md-offset-1
-					a.text-black(href="/about")
-						p.centered-text About
-				.col-xs-6.col-md-2
-					a.text-black(href="/diy")
-						p.centered-text DIY
-				.col-xs-6.col-md-2
-					a.text-black(href="/about")
-						p.centered-text Other Stuff
-				.col-xs-6.col-md-2
-					a.text-black(href="/about")
-						p.centered-text More Stuff
-				.col-xs-6.col-md-2
-					a.text-black(href="/about")
-						p.centered-text This thing
+//- #main-navbar.container-fluid
+//- 	.row
+//- 		.col-xs-12.col-md-6.col-md-offset-3
+//- 			.row
+//- 				.col-xs-6.col-md-2.col-md-offset-1
+//- 					a.text-black(href="/about")
+//- 						p.centered-text About
+//- 				.col-xs-6.col-md-2
+//- 					a.text-black(href="/diy")
+//- 						p.centered-text DIY
+//- 				.col-xs-6.col-md-2
+//- 					a.text-black(href="/about")
+//- 						p.centered-text Other Stuff
+//- 				.col-xs-6.col-md-2
+//- 					a.text-black(href="/about")
+//- 						p.centered-text More Stuff
+//- 				.col-xs-6.col-md-2
+//- 					a.text-black(href="/about")
+//- 						p.centered-text This thing
 
-.container-fluid
-	.row#floating-nav
-		.col-xs-12.col-md-6.col-md-offset-3
-			.row
-				.col-xs-6.col-md-2.col-md-offset-1
-					a.text-white(href="/about")
-						p.centered-text About
-				.col-xs-6.col-md-2
-					a.text-white(href="/diy")
-						p.centered-text DIY
-				.col-xs-6.col-md-2
-					a.text-white(href="/about")
-						p.centered-text Other Stuff
-				.col-xs-6.col-md-2
-					a.text-white(href="/about")
-						p.centered-text More Stuff
-				.col-xs-6.col-md-2
-					a.text-white(href="/about")
-						p.centered-text This thing
-
-
+//- .container-fluid
+//- 	.row#floating-nav
+//- 		.col-xs-12.col-md-6.col-md-offset-3
+//- 			.row
+//- 				.col-xs-6.col-md-2.col-md-offset-1
+//- 					a.text-white(href="/about")
+//- 						p.centered-text About
+//- 				.col-xs-6.col-md-2
+//- 					a.text-white(href="/diy")
+//- 						p.centered-text DIY
+//- 				.col-xs-6.col-md-2
+//- 					a.text-white(href="/about")
+//- 						p.centered-text Other Stuff
+//- 				.col-xs-6.col-md-2
+//- 					a.text-white(href="/about")
+//- 						p.centered-text More Stuff
+//- 				.col-xs-6.col-md-2
+//- 					a.text-white(href="/about")
+//- 						p.centered-text This thing
 
 
 
@@ -58,43 +64,35 @@ h1.text-center StyleBits
 
 
 
+//- #main.container
+//- 	p 
+//- 		|Cred paleo asymmetrical, cliche +1 mumblecore ennui Pinterest 90's kale chips tattooed quinoa. Organic Pinterest XOXO Blue Bottle, McSweeney's fingerstache hashtag raw denim messenger bag twee. Salvia 90's tofu, 8-bit sustainable organic typewriter semiotics Kickstarter Echo Park tote bag roof party cray pop-up synth. Pour-over scenester chillwave, vegan chambray Tumblr Wes Anderson shabby chic fap sartorial photo booth bicycle rights flexitarian mumblecore locavore. Skateboard sartorial craft beer, organic food truck Tumblr polaroid quinoa tofu Pitchfork direct trade Austin scenester PBR. Bushwick mixtape blog, semiotics literally 90's Pinterest meggings. Literally chambray craft beer flannel keytar.
 
+//- 	p
+//- 		|Kitsch flexitarian 90's skateboard, trust fund try-hard shabby chic Schlitz. Sustainable meggings cardigan wolf scenester. Kitsch selvage hoodie, cardigan sartorial mumblecore pug banh mi lo-fi. Jean shorts cray literally, shabby chic Helvetica Brooklyn fashion axe 3 wolf moon High Life ethical Cosby sweater fingerstache squid Godard drinking vinegar. Forage ethnic post-ironic, normcore vinyl gastropub 3 wolf moon put a bird on it Marfa mlkshk banh mi church-key fixie stumptown sustainable. Bitters meggings PBR&B art party small batch disrupt. Authentic Cosby sweater retro disrupt.
 
+//- 	p
+//- 		|Mlkshk seitan biodiesel, polaroid viral church-key mixtape shabby chic quinoa semiotics. Bespoke tofu High Life bitters. Tofu YOLO meh butcher, Tumblr dreamcatcher Tonx fap. Literally ugh drinking vinegar sustainable, blog Thundercats trust fund keffiyeh chillwave tote bag photo booth jean shorts Pinterest kale chips irony. Deep v hella tousled, Truffaut actually hoodie brunch Intelligentsia. Readymade hella seitan scenester Williamsburg. Flannel Odd Future narwhal ennui fixie.
 
+//- 	p
+//- 		|Sriracha Echo Park slow-carb cornhole, shabby chic quinoa Thundercats meggings art party swag YOLO kale chips food truck stumptown. Skateboard aesthetic kale chips, fanny pack church-key Intelligentsia Bushwick forage. Locavore pop-up pug mlkshk polaroid. Kickstarter tofu tote bag, Echo Park narwhal photo booth bespoke flannel scenester. Pop-up fanny pack chillwave before they sold out forage. Chambray wolf umami, dreamcatcher gentrify pug kogi semiotics hella. Wes Anderson stumptown jean shorts +1 swag.
 
+//- 	p
+//- 		|XOXO whatever cred Blue Bottle Thundercats dreamcatcher. Pickled readymade ethnic, Banksy quinoa Austin Bushwick ugh. Leggings Vice Brooklyn, stumptown Intelligentsia banjo freegan mustache ugh Thundercats. Bushwick locavore authentic lo-fi hashtag yr American Apparel. Vice whatever polaroid, freegan try-hard selfies fixie umami Thundercats wolf pickled. Blog asymmetrical McSweeney's four loko. Selvage swag sustainable, Carles street art PBR&B art party organic trust fund kogi forage hella.
 
+//- 	p
+//- 		|Tumblr cred farm-to-table freegan, American Apparel Cosby sweater 8-bit roof party cardigan retro lomo DIY iPhone. Hella literally small batch, Vice Cosby sweater sartorial you probably haven't heard of them photo booth banh mi Truffaut pour-over dreamcatcher occupy gentrify. +1 Intelligentsia aesthetic, bicycle rights Odd Future pickled beard quinoa direct trade pour-over swag McSweeney's. Tousled Thundercats pickled Schlitz Banksy yr 3 wolf moon. Pop-up forage Pitchfork, selfies seitan skateboard organic whatever Godard cray normcore salvia keytar. Tote bag fashion axe 90's, cardigan iPhone polaroid dreamcatcher narwhal keytar beard next level ennui. Twee street art locavore Blue Bottle, gentrify Etsy fashion axe cardigan paleo retro.
 
+//- 	p
+//- 		|Organic keytar Carles, distillery kale chips post-ironic viral flannel VHS four loko blog Neutra irony brunch McSweeney's. Put a bird on it tote bag seitan readymade gentrify, pop-up umami squid actually whatever. Dreamcatcher authentic Blue Bottle Bushwick, cray fashion axe fap Helvetica McSweeney's hoodie bespoke trust fund craft beer slow-carb. Vice High Life yr, tousled selfies Etsy trust fund Wes Anderson drinking vinegar. YOLO Bushwick Kickstarter tofu dreamcatcher, viral food truck Thundercats actually fashion axe squid bicycle rights. Tofu forage slow-carb, Truffaut mustache vegan keffiyeh DIY pork belly McSweeney's direct trade flannel typewriter. Ethical PBR Cosby sweater, selfies bespoke roof party cliche.
 
+//- 	p
+//- 		|Narwhal YOLO semiotics distillery. Sustainable umami cray, small batch bicycle rights church-key Echo Park. DIY Portland four loko keytar, fanny pack mixtape typewriter. Shabby chic kale chips Tumblr, High Life meh letterpress hashtag organic art party bespoke iPhone dreamcatcher. Pork belly gluten-free deep v skateboard, beard Intelligentsia viral cornhole tofu asymmetrical Kickstarter mustache. Plaid pug Blue Bottle PBR flannel, cliche umami fashion axe you probably haven't heard of them polaroid selfies forage. Craft beer kitsch synth brunch.
+//- 	p
+//- 		|Oh. You need a little dummy text for your mockup? How quaint.
 
-#main.container
-	p 
-		|Cred paleo asymmetrical, cliche +1 mumblecore ennui Pinterest 90's kale chips tattooed quinoa. Organic Pinterest XOXO Blue Bottle, McSweeney's fingerstache hashtag raw denim messenger bag twee. Salvia 90's tofu, 8-bit sustainable organic typewriter semiotics Kickstarter Echo Park tote bag roof party cray pop-up synth. Pour-over scenester chillwave, vegan chambray Tumblr Wes Anderson shabby chic fap sartorial photo booth bicycle rights flexitarian mumblecore locavore. Skateboard sartorial craft beer, organic food truck Tumblr polaroid quinoa tofu Pitchfork direct trade Austin scenester PBR. Bushwick mixtape blog, semiotics literally 90's Pinterest meggings. Literally chambray craft beer flannel keytar.
-
-	p
-		|Kitsch flexitarian 90's skateboard, trust fund try-hard shabby chic Schlitz. Sustainable meggings cardigan wolf scenester. Kitsch selvage hoodie, cardigan sartorial mumblecore pug banh mi lo-fi. Jean shorts cray literally, shabby chic Helvetica Brooklyn fashion axe 3 wolf moon High Life ethical Cosby sweater fingerstache squid Godard drinking vinegar. Forage ethnic post-ironic, normcore vinyl gastropub 3 wolf moon put a bird on it Marfa mlkshk banh mi church-key fixie stumptown sustainable. Bitters meggings PBR&B art party small batch disrupt. Authentic Cosby sweater retro disrupt.
-
-	p
-		|Mlkshk seitan biodiesel, polaroid viral church-key mixtape shabby chic quinoa semiotics. Bespoke tofu High Life bitters. Tofu YOLO meh butcher, Tumblr dreamcatcher Tonx fap. Literally ugh drinking vinegar sustainable, blog Thundercats trust fund keffiyeh chillwave tote bag photo booth jean shorts Pinterest kale chips irony. Deep v hella tousled, Truffaut actually hoodie brunch Intelligentsia. Readymade hella seitan scenester Williamsburg. Flannel Odd Future narwhal ennui fixie.
-
-	p
-		|Sriracha Echo Park slow-carb cornhole, shabby chic quinoa Thundercats meggings art party swag YOLO kale chips food truck stumptown. Skateboard aesthetic kale chips, fanny pack church-key Intelligentsia Bushwick forage. Locavore pop-up pug mlkshk polaroid. Kickstarter tofu tote bag, Echo Park narwhal photo booth bespoke flannel scenester. Pop-up fanny pack chillwave before they sold out forage. Chambray wolf umami, dreamcatcher gentrify pug kogi semiotics hella. Wes Anderson stumptown jean shorts +1 swag.
-
-	p
-		|XOXO whatever cred Blue Bottle Thundercats dreamcatcher. Pickled readymade ethnic, Banksy quinoa Austin Bushwick ugh. Leggings Vice Brooklyn, stumptown Intelligentsia banjo freegan mustache ugh Thundercats. Bushwick locavore authentic lo-fi hashtag yr American Apparel. Vice whatever polaroid, freegan try-hard selfies fixie umami Thundercats wolf pickled. Blog asymmetrical McSweeney's four loko. Selvage swag sustainable, Carles street art PBR&B art party organic trust fund kogi forage hella.
-
-	p
-		|Tumblr cred farm-to-table freegan, American Apparel Cosby sweater 8-bit roof party cardigan retro lomo DIY iPhone. Hella literally small batch, Vice Cosby sweater sartorial you probably haven't heard of them photo booth banh mi Truffaut pour-over dreamcatcher occupy gentrify. +1 Intelligentsia aesthetic, bicycle rights Odd Future pickled beard quinoa direct trade pour-over swag McSweeney's. Tousled Thundercats pickled Schlitz Banksy yr 3 wolf moon. Pop-up forage Pitchfork, selfies seitan skateboard organic whatever Godard cray normcore salvia keytar. Tote bag fashion axe 90's, cardigan iPhone polaroid dreamcatcher narwhal keytar beard next level ennui. Twee street art locavore Blue Bottle, gentrify Etsy fashion axe cardigan paleo retro.
-
-	p
-		|Organic keytar Carles, distillery kale chips post-ironic viral flannel VHS four loko blog Neutra irony brunch McSweeney's. Put a bird on it tote bag seitan readymade gentrify, pop-up umami squid actually whatever. Dreamcatcher authentic Blue Bottle Bushwick, cray fashion axe fap Helvetica McSweeney's hoodie bespoke trust fund craft beer slow-carb. Vice High Life yr, tousled selfies Etsy trust fund Wes Anderson drinking vinegar. YOLO Bushwick Kickstarter tofu dreamcatcher, viral food truck Thundercats actually fashion axe squid bicycle rights. Tofu forage slow-carb, Truffaut mustache vegan keffiyeh DIY pork belly McSweeney's direct trade flannel typewriter. Ethical PBR Cosby sweater, selfies bespoke roof party cliche.
-
-	p
-		|Narwhal YOLO semiotics distillery. Sustainable umami cray, small batch bicycle rights church-key Echo Park. DIY Portland four loko keytar, fanny pack mixtape typewriter. Shabby chic kale chips Tumblr, High Life meh letterpress hashtag organic art party bespoke iPhone dreamcatcher. Pork belly gluten-free deep v skateboard, beard Intelligentsia viral cornhole tofu asymmetrical Kickstarter mustache. Plaid pug Blue Bottle PBR flannel, cliche umami fashion axe you probably haven't heard of them polaroid selfies forage. Craft beer kitsch synth brunch.
-	p
-		|Oh. You need a little dummy text for your mockup? How quaint.
-
-	p
-		|I bet you’re still using Bootstrap too…
+//- 	p
+//- 		|I bet you’re still using Bootstrap too…
 
 
 include includes/footer

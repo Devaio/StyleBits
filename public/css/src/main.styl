@@ -1,7 +1,47 @@
 @import 'functions'
+@import 'colors'
+@import 'utils'
+@import 'type'
 
 body
-	font-family : "HelveticaNeue-Lite", Helvetica
+	font-family : "Calibri"//-, Helvetica
 	color:#000
 	font-weight:200
-	background:url('/public/img/hd-bg.png') 0 0 no-repeat
+	height 20000px
+	// background:url('/public/img/hd-bg.png') 0 0 no-repeat
+
+/***********************/
+/***** Nav Styles ******/
+/***********************/
+
+#floating-nav
+	top -90px
+	width 100%
+	position fixed
+	background-color rgba(50,50,50,0.8)
+	transition(all, 0.3s, ease-out)
+
+	&.shown
+		top 0px
+
+
+
+
+
+
+
+
+
+@media(min-width: 768px)
+	#floating-nav
+		top -50px
+
+
+
+
+
+
+
+@media(min-width 992px)
+	#floating-nav
+		top -50px

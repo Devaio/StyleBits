@@ -2,35 +2,36 @@
 passwords = require '../modules/passwords'
 mongoose = require 'mongoose'
 Account = mongoose.model('Account')
+Main = require './main'
 
-module.exports.createAccount = (req, res) ->
-	
-	body = req.body
+class Users extends Main
 
-	if not body.name or 
-		not body.email or 
-		not body.pass1 or 
-		not body.pass2 or 
-		body.pass1 isnt body.pass2
-			res.send JSON.stringify({error : 'Please complete the form'})
-			return
+	constructor : () ->
+		super(Account)
 
-	user = {}
-	user.name = body.name
-	user.email = body.email
-	user.password = passwords.encrypt body.pass1
+	get : (req, res) ->
+		super(req, res)
 
-	accountModel = new Account(user)
-	accountModel.save (err) ->
-		console.log('ERROR', err)
-		if err
-			res.send JSON.stringify({error : 'An error occured. Please try again.'})
-		else
-			#login the user and redirect
-			req.logIn accountModel, (err) ->
-				if err 
-					return next(err)
+	delete : (req, res) ->
+		super(req, res)
 
-				res.redirect('/')
+	upsert : (req, res) ->
+		self = @
+		body = req.body
+		user = {}
+		if body.pass1
+			if not body.name or
+				not body.email or
+				not body.pass1 or
+				not body.pass2 or
+				body.pass1 isnt body.pass2
+					res.send JSON.stringify({error : 'Please complete the form'})
+					return
+			user.password = passwords.encrypt body.pass1
 
+		user.name = body.name
+		user.email = body.email
 
+		super user, req, res
+
+module.exports = new Users()

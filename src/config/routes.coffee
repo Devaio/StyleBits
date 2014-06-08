@@ -16,7 +16,7 @@ module.exports = (app, passport) ->
 		
 	#Index
 	index = require '../controllers/index'
-	app.get '/', routeMiddleware, index.index
+	app.get '/', index.index
 
 	#Auth
 	auth = require '../controllers/auth'
@@ -26,7 +26,7 @@ module.exports = (app, passport) ->
 	
 	#Users
 	users = require '../controllers/users'
-	app.post '/createaccount', users.createAccount
+	app.post '/users', users.upsert
 	
 
 

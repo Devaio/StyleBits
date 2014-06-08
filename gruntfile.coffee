@@ -1,4 +1,5 @@
 
+
 module.exports = (grunt) ->
   grunt.initConfig
 
@@ -12,15 +13,18 @@ module.exports = (grunt) ->
              'bower_components/jquery/dist/jquery.min.js'
              'bower_components/bootstrap/dist/js/bootstrap.min.js'
              'bower_components/underscore/underscore.js'
-             'bower_components/momentjs/min/moment.min.js'
+             'bower_components/moment/min/moment.min.js'
              'public/js/vendor/handlebars.runtime.min.js'
-          ] 
+             # 'bower_components/jquery-ui/ui/minified/jquery-ui.min.js'
+             'bower_components/elasticsearch/elasticsearch.min.js'
+          ]
     cssmin :
       combine :
-        files : 
+        files :
           'public/css/dist/build.min.css' : ['public/css/lib/**/*.css']
           'public/css/dist/vendor.min.css' : [ #add what bower components you want to use here
             'bower_components/bootstrap/dist/css/bootstrap.css'
+            # 'bower_components/jquery-ui/themes/base/minified/jquery-ui.min.css'
           ]
 
     coffee :
@@ -30,7 +34,7 @@ module.exports = (grunt) ->
         src : ['**/*.coffee']
         dest : 'public/js/lib'
         ext : '.js'
-      server : 
+      server :
         expand : true
         cwd : 'src'
         src : ['**/*.coffee']
@@ -44,43 +48,77 @@ module.exports = (grunt) ->
         src : ['**/*.styl']
         dest : 'public/css/lib'
         ext : '.css'
-
-    #watch 
+    handlebars :
+      all :
+        files : 'public/js/templates/templates.js' : ['public/js/templates/**/*.handlebars']        
+    jade :
+      compile :
+        options :
+          client : true
+          data :
+            debug : false
+        files :
+          'public/js/dist/templates.js' : ['public/templates/**/*.jade']
+    #watch
     watch :
       client :
-        files : '**/*.coffee'
+        files : 'public/js/src/**/*.coffee'
         tasks : ['coffee']
+
       server :
-        files : '**/*.coffee'
+        files : 'src/**/*.coffee'
         tasks : ['coffee']
+
       css :
-        files : '**/*.styl'
+        files : 'public/css/src/**/*.styl'
         tasks : ['stylus']
-    
+
+      templates :
+        files : 'public/templates/**/*.jade'
+        tasks : ['jade.compile']
+
+    nodemon :
+      app :
+        script: 'lib/app.js'
+        options :
+          watch : ['lib/**/*.js']
+          ignore: ['node_modules/**']
+
+    shell :
+      elasticSearch :
+        options :
+          stdout : false
+        command : './elasticsearch/bin/elasticsearch'
+      jasmine :
+        options :
+          stdout : true
+        command : 'cd lib/tests && jasmine-node .'
+    # Jasmine tests
+    jasmine:
+        pivotal:
+            src: 'src/**/*.js'
+            options:
+                specs: 'lib/tests/*_spec.js'
     concurrent :
-      dev : 
-        tasks : ['nodemon', 'watch']
-        options : 
+      dev :
+        tasks : ['watch', 'jade', 'nodemon:app']
+        options :
           logConcurrentOutput : true
 
-    nodemon : 
-      dev : 
-        script: 'lib/app.js',
-      options : 
-        env : 
-          PORT : '3000'
-  
 
   # Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-coffee')
   grunt.loadNpmTasks('grunt-contrib-stylus')
+  grunt.loadNpmTasks('grunt-handlebars-compiler')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-nodemon')
   grunt.loadNpmTasks('grunt-concurrent')
+  grunt.loadNpmTasks('grunt-shell')
+  grunt.loadNpmTasks('grunt-contrib-jade')
 
   # Default task(s).
-  grunt.registerTask('default', ['stylus', 'coffee', 'uglify', 'cssmin', 'concurrent:dev'])
+  grunt.registerTask('default', ['stylus', 'coffee', 'cssmin', 'handlebars', 'concurrent:dev'])
   grunt.registerTask('build', ['uglify', 'cssmin'])
-
+  grunt.registerTask('test',['shell:jasmine'])

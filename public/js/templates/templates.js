@@ -1,5 +1,5 @@
 (function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -13,4 +13,4 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + "</h1>";
   return buffer;
   });
-})();
+}());

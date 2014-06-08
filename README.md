@@ -1,4 +1,4 @@
-# Human Design
+# StyleBits
 
 ## Technologies
 
@@ -8,6 +8,7 @@
 * Handlebars - http://handlebarsjs.com/
 * CoffeeScript - http://coffeescript.org/
 * Stylus - http://learnboost.github.io/stylus/
+* Powered by Human Bootstrap
 
 ## Dependencies
 
